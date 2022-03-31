@@ -20,6 +20,10 @@ struct News: Decodable,Identifiable {
     var content: String?
     var description:String?
     var source:source
+    
+    var dateParsed:Date {
+        (publishedAt?.dateParsed())!
+    }
 }
 
 struct source:Decodable{
