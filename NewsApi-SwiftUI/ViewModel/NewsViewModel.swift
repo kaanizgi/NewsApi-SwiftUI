@@ -12,7 +12,7 @@ class NewsViewModel:ObservableObject {
     
     @Published var NewsList = [News]()
     let webService = Network()
-    let url =  URL(string:"https://newsapi.org/v2/top-headlines?country=tr&apiKey=9a2315dccd3442aeb939f24d42e28f39")!
+    let url =  URL(string:"https://newsapi.org/v2/top-headlines?country=gb&apiKey=9a2315dccd3442aeb939f24d42e28f39")!
     
     func getNews() async {
         do {
