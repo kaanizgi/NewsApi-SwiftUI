@@ -7,10 +7,11 @@
 
 import Foundation
 
-struct NewsModel : Decodable {
+struct NewsModel : Codable {
     var articles:[News]
 }
-struct News: Decodable,Identifiable {
+
+struct News: Codable,Identifiable {
     let id = UUID()
     var author: String?
     var title: String?
@@ -20,13 +21,12 @@ struct News: Decodable,Identifiable {
     var content: String?
     var description:String?
     var source:source
-    
     var dateParsed:Date {
         (publishedAt?.dateParsed())!
     }
+    
 }
-
-struct source:Decodable{
+struct source:Codable{
     var id:String?
     var name:String?
 }

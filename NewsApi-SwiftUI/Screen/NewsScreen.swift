@@ -14,7 +14,7 @@ struct NewsScreen: View {
         VStack(alignment:.leading,spacing: 8) {
             WebImage(url: URL(string: data.urlToImage ?? ""))
                 .resizable()
-                .frame(height: 300)
+                .frame(height: 250)
                 .frame(maxWidth:.infinity)
             Text(data.title ?? "")
                 .font(.body)
@@ -33,13 +33,15 @@ struct NewsScreen: View {
                 .font(.footnote)
                 .foregroundColor(.gray)
                 .padding(.horizontal)
+                .padding(.bottom)
+                
         }
     }
 }
 
 struct NewsScreen_Previews: PreviewProvider {
     static var previews: some View {
-        let news = News(author: "sfdsdf", title: "Son Dakika: Rusya'dan flaş ateşkes kararı! Yarın saat 10:00'dan itibaren...", urlToImage: "https://imgrosetta.mynet.com.tr/file/13852105/13852105-700x400.jpg", url: "https://www.mynet.com/rusya-dan-flas-ateskes-karari-yarin-saat-10-00-dan-itibaren-110106935974", publishedAt: "11", content: "sdffd", description: "Son dakika haberi: Rusya-Ukrayna savaşıyla ilgili bir son dakika ateşkes açıklaması geldi. Rusya, yarın Moskova saatiyle 10.00'dan itibaren yalnızca insani amaçlarla ateşkes ilan ettiğini duyurarak, sivillerin ve yabancı vatandaşların Mariupol'den Zaporijya'y…", source: source(id: "sfdfsd", name: "dsfsfd"))
+        let news = News(author: "sfdsdf", title: "", urlToImage: "", url: "", publishedAt: "", content: "sdffd", description: "", source: source(id: "", name: ""))
         NewsScreen(data: news)
     }
 }

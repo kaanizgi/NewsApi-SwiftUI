@@ -13,17 +13,15 @@ struct ContentView: View {
     
     var body: some View {
         NavigationView {
-            List(ViewModel.NewsList) {item in
+            List(ViewModel.newsList) {item in
                 NewsScreen(data: item)
                     .listRowInsets(EdgeInsets())
             }.listStyle(.plain)
                 .navigationTitle("News")
                 .navigationViewStyle(.stack)
                 .navigationBarTitleDisplayMode(.inline)
-        }
-        
-        .task {
-            await ViewModel.getNews()
+        }.onAppear {
+            ViewModel.getNews()
         }
     }
 }
